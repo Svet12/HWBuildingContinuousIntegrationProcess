@@ -20,29 +20,42 @@ public class StatisticsServiceTest {
     }
 
 
-    @Test
-    void truthfulnessFinMax() {
-        StatisticsService service = new StatisticsService();
+//    @Test
+//    void truthfulnessFinMax() {
+//        StatisticsService service = new StatisticsService();
+//
+//        long[] incomesInBillions = {12, 5, 8, 4, 5, 3, 8, 6, 11, 11, 12};
+//
+//        int numberOfMaximumPositions = 0;
+//        long currentMax = incomesInBillions[0];
+//        for (long income : incomesInBillions) {
+//            if (currentMax < income) {
+//                currentMax = income;
+//
+//            }
+//            for (int i = 0; i < incomesInBillions.length; i++) {
+//                if (incomesInBillions[i] == currentMax) {
+//                    numberOfMaximumPositions++;
+//                }
+//            }
+//        }
+//        long expectedStationNumber = 0;
+//        long actualStationNumber = service.findMax(incomesInBillions);
+//        Assertions.assertEquals(expectedStationNumber, actualStationNumber);
+//
+//    }
+//
+//}
+@Test
+void findMaxOnTheBorder() {
+    StatisticsService service = new StatisticsService();
 
-        long[] incomesInBillions = {12, 5, 8, 4, 5, 3, 8, 6, 11, 11, 12};
+    long[] incomesInBillions = {12, 5, 8, 4, 5, 3, 20, 6, 11, 11, 25};
+    long expected = 25;
 
-        int numberOfMaximumPositions = 0;
-        long currentMax = incomesInBillions[0];
-        for (long income : incomesInBillions) {
-            if (currentMax < income) {
-                currentMax = income;
+    long actual = service.findMax(incomesInBillions);
 
-            }
-            for (int i = 0; i < incomesInBillions.length; i++) {
-                if (incomesInBillions[i] == currentMax) {
-                    numberOfMaximumPositions++;
-                }
-            }
-        }
-        long expectedStationNumber = 0;
-        long actualStationNumber = service.findMax(incomesInBillions);
-        Assertions.assertEquals(expectedStationNumber, actualStationNumber);
-
-    }
+    Assertions.assertEquals(expected, actual);
+}
 
 }
