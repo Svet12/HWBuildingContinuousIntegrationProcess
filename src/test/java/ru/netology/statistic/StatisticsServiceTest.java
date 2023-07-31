@@ -50,7 +50,7 @@ public class StatisticsServiceTest {
 void findMaxOnTheBorder() {
     StatisticsService service = new StatisticsService();
 
-    long[] incomesInBillions = {12, 5, 8, 4, 5, 3, 20, 6, 11, 11, 25};
+    long[] incomesInBillions = {1, 5, 8, 4, 5, 3, 20, 6, 11, 11, 25};
     long expected = 25;
 
     long actual = service.findMax(incomesInBillions);
